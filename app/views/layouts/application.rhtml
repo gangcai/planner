@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Projects: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'share' %>
+</head>
+<body>
+<div id="container">
+   <div id="header">
+     <div class="picture">
+       ce ke yong yuan
+     </div>
+     <div class="bottom">
+     <%= link_to 'Home',:controller=>"projects",:action=>:index %>
+     <%= link_to 'Tasks',:controller=>"show",:action=>:tasks %>
+     <%= link_to 'Projects',:controller=>"show",:action=>:projects %>
+     <% if logged_in? -%>
+     <%=link_to 'logout',:controller=>'sessions',:action=>'destroy' %>
+     <% else -%>
+     <%= link_to 'login',:controller=>'sessions',:action=>'new' %>
+     <% end -%>
+     </div>
+   </div>
+
+    <div id="content">
+    <%= javascript_include_tag "prototype.js" %>
+    <%= calendar_date_select_includes "red"  %>
+    <p style="color: green"><%= flash[:notice] %></p>
+    <p style="color: #990000"><%= flash[:alert] %></p>
+    <%= yield  %>
+    </div>
+     <div id="rightbar">
+<iframe src="http://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=gcxiester%40gmail.com&amp;color=%232952A3&amp;ctz=Asia%2FShanghai" style=" border-width:0 " width="250" height="400" frameborder="0" scrolling="no"></iframe>
+
+     </div>
+    <div id="footer">
+      Welcome to gangcai's home.
+    </div>
+
+</div>
+
+</body>
+</html>

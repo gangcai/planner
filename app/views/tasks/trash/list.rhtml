@@ -1,0 +1,6 @@
+<%  all_project.each do |project| %>
+  <% all_task(project).each do |task| %>
+    <%= task.name %>
+    <%= project.name %>
+  <%end%>
+<% end %>

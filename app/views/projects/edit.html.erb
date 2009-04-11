@@ -1,0 +1,23 @@
+<h1>Editing project</h1>
+
+<% form_for @project do |f| %>
+  <%= f.error_messages %>
+  project state <%=select('project','state',[["Finished",true],["Unfinished",false]])%>
+  Importance<%=select('project','importance',[["important",true],["not important",false]])%>
+  project name <%=f.text_field :name,:size=>20%> <br>
+  Project Aim<br><%=f.text_area :aim,:rows=>10,:cols=>50 %> <br>
+  Project Description<br><%= f.text_area :description,:rows=>10,:cols=>50 %> <br>
+  Project start date <br>
+  <%= f.calendar_date_select :begtime,:year_range=> Date.today.year..2014, :class=>"text-input",:size=>20 %>
+  <br>
+  Project end date<br>
+  <%= f.calendar_date_select :endtime,:year_range=> Date.today.year..2014, :class=>"text-input",:size=>20 %>
+    <br>
+  <p>
+    <%=debug(params)%>
+    <%=submit_tag "Save Your Change" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @project %> |
+<%= link_to 'Back', projects_path %>

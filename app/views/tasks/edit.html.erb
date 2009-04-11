@@ -1,0 +1,25 @@
+<h1>Editing task</h1>
+
+<% form_for [@project,@task] do |f| %>
+  <%= f.error_messages %>
+<h4>Task name</h4>
+<%=f.text_field :name%> <br>
+<h4>Task state</h4>
+<%=select('task','state',[["Finished",true],["Unfinished",false]])%>
+<h4>Task start date </h4>
+  <%= f.calendar_date_select :begtime,:year_range=> Date.today.year..2014, :class=>"text-input" %>
+  <br>
+<h4>Task end date</h4>
+  <%= f.calendar_date_select :endtime,:year_range=> Date.today.year..2014, :class=>"text-input" %>
+    <br>
+<h4>Task Aim</h4>
+<%=f.text_area :aim%> <br>
+<h4>Task Description</h4>
+<%= f.text_area :description %> <br>
+  <p>
+    <%=debug(params) %>
+    <%= submit_tag "Update"%>
+  </p>
+<% end %>
+
+<%= link_to 'Back', project_path(@project) %>

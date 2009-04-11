@@ -1,0 +1,140 @@
+/* 
+    Document   : share
+    Created on : Mar 28, 2009, 9:15:58 PM
+    Author     : gangcai
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body{    
+    margin:0px;
+    font-family:monospace;
+    font-size:medium;
+    color:green;
+    background:url("../images/green_bar.jpg");
+}
+
+
+/*link style*/
+a:link {
+	font-weight: bold;
+	text-decoration: none;
+	color: #B7A5DF;
+	}
+a:visited {
+	font-weight: bold;
+	text-decoration: none;
+	color: #D4CDDC;
+	}
+a:hover, a:active {
+	text-decoration: underline;
+	color: #9685BA;
+	}
+a:active {
+  color: #9999CC;
+  text-decoration: underline;
+  background: #FFFFFF;
+    }
+/*end of link style*/
+h2{
+    color:purple;
+    font-size:20px;
+}
+
+h3{
+    color:red;
+    font-size:14px;
+}
+
+h3.black{
+    color:black;
+}
+
+h4{
+    color:olive;
+}
+
+dt{
+    color:silver;
+}
+
+dd{
+    color:blue;
+}
+
+
+#container{
+    text-align:left;
+    /*background:white;*/
+    background:yellow;
+    /*position:relative;*/
+    /*margin-top:10px;*/
+    /*border:2px solid #000000;*/
+    margin-bottom:0px;
+    margin-left:50px;
+    margin-right:50px;
+    /*width:100%;*/
+}
+
+#header{
+
+    /*background:orange;*/
+    background:url("../images/blue.jpg");
+    height:150px;
+    /*border:2px solid #000000;*/
+}
+
+#header .bottom{
+    background:fuchsia;
+    float:left;
+    border:black 1px;
+    /*margin-bottom:0px;*/
+    margin-top:120px;
+    margin-left:10px;
+    padding-left:2px;
+    padding-right:2px;
+    padding-top:2px;
+    padding-bottom:2px;
+}
+
+#header .picture{
+    float:right;
+    /*border:black 1px;*/
+    /*margin-bottom:0px;*/
+    margin-top:10px;
+    margin-right:10px;
+    height:140px;
+    width:140px;
+    background:url("../images/clock.png");
+}
+/*#header a{
+    padding-top:100px;
+}*/
+
+#content{
+    /*background:white;*/
+    background:yellow;
+    width:64%;
+    float:left;
+    margin-bottom:0px;
+    padding-left:30px;
+    padding-right:10px;
+}
+
+#rightbar{
+    background:yellow;
+    float:right;
+    width:27%;
+}
+
+
+#footer{
+    clear:both;
+    height:60px;
+    background:orange;
+}

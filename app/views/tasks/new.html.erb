@@ -1,0 +1,20 @@
+<h1>New task</h1>
+
+<% form_for :task,@task,:url=>project_tasks_url(:project_id=>@project,:id=>@task) do |f| %>
+  <%= f.error_messages %>
+  <%= debug(params) %>
+  Task name <%=f.text_field :name%> <br>
+  Task Aim<br><%=f.text_area :aim%> <br>
+  Task Description<br><%= f.text_area :description %> <br>
+  Task start date <br>
+  <%= f.calendar_date_select :begtime,:year_range=> Date.today.year..2014, :class=>"text-input" %>
+  <br>
+  Task end date<br>
+  <%= f.calendar_date_select :endtime,:year_range=> Date.today.year..2014, :class=>"text-input" %>
+    <br>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', project_path(@project) %>

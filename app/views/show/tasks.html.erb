@@ -1,0 +1,20 @@
+<h2>list of all the tasks</h2>
+<ul>
+<%  all_project.each do |project| %>
+  <% all_task(project).each do |task| %>
+     <h3><%= task.name %></h3>
+    <h4><li>Projects Name</li></h4>
+ <%= project.name %>
+    <h4><li>States</li></h4>
+<%= state(task.state) %><br>
+      <h4><li>Aim</li></h4>
+<%= task.aim %><br>
+     <h4><li>description</li></h4>
+<%= task.description %><br>
+     <h4><li>start time</li></h4>
+<%= task.begtime %><br>
+       <h4><li>end time</li></h4>
+<%= task.endtime %><br>
+  <%end%>
+<% end %>
+</ul>

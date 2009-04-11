@@ -1,0 +1,34 @@
+<h1>All the projects</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% for project in @projects %>
+  <tr>
+    <td><%=project.name%></td>
+    <td><%= link_to 'Add A New Task',new_project_task_url(project) %>
+    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<h1>Create a new project</h1>
+<% form_for :project,:url=>{:action=>:create} do |f| %>
+  <%= f.error_messages %>
+  project state <%=select('table','state',[["Unfinished",false],["Finished",true]])%>
+  project name <%=f.text_field :name,:size=>20%> <br>
+  Project Aim<br><%=f.text_area :aim,:rows=>10,:cols=>50 %> <br>
+  Project Description<br><%= f.text_area :description,:rows=>10,:cols=>50 %> <br>
+  Project start date <br>
+  <%= f.calendar_date_select :begtime,:year_range=> Date.today.year..2014, :class=>"text-input",:size=>20 %>
+  <br>
+  Project end date<br>
+  <%= f.calendar_date_select :endtime,:year_range=> Date.today.year..2014, :class=>"text-input",:size=>20 %>
+    <br>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>

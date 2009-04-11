@@ -1,0 +1,31 @@
+<p>
+<h2>The project list</h2>
+<%  all_project.each do |@project| %>
+<h3> <%= @project.name %></h3>
+<dl>
+ <dt>State</dt>
+ <dd><%= project_state(@project) %></dd>
+ <dt>Importance</dt>
+ <dd><%= project_importance(@project) %></dd>
+ <dt>Project aim</dt>
+ <dd><%= @project.aim %></dd>
+ <dt>Project Description</dt>
+ <dd><%=@project.description%></dd>
+ <dt>Project start time</dt>
+ <dd><%=@project.begtime%></dd>
+ <dt>Project end time</dt>
+ <dd><%=@project.endtime%></dd>
+ <dt>All The Tasks</dt>
+<% unless @project.tasks.empty? %>
+  <%@project.tasks.each do |t| %>
+      <dd>
+      <%=t.name%>
+      <%=link_to "Edit",edit_project_task_path(t.project,t)%>
+      </dd>
+  <%end%>
+<%end%>
+</dl>
+
+<% end %>
+
+</p>

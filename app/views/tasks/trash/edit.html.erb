@@ -1,0 +1,20 @@
+<h1>Editing task</h1>
+
+<% remote_form_for(:task,:url=>project_tasks_path) do |f| %>
+  <%= f.error_messages %>
+  <%= project_tasks_path %>
+  Task name <%=f.text_field :name%> <br>
+  Task Aim<%=f.text_field :aim%> <br>
+  Task Description<%= f.text_field :description %> <br>
+  Task start date <br>
+  <%= f.calendar_date_select :begtime,:year_range=> Date.today.year..2014, :class=>"text-input" %>
+  <br>
+  Task end date<br>
+  <%= f.calendar_date_select :endtime,:year_range=> Date.today.year..2014, :class=>"text-input" %>
+    <br>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', project_path(@project) %>
